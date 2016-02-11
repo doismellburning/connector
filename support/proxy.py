@@ -84,7 +84,7 @@ def {fctname}({args}):
 
 def make_method_wrapper(servicename, method, delegateattribute):
     """Build a new function to use as some delegation class method."""
-    #FullArgSpec(args, varargs, varkw, defaults, kwonlyargs, kwonlydefaults, annotations)
+    # FullArgSpec(args, varargs, varkw, defaults, kwonlyargs, kwonlydefaults, annotations)
     fa = inspect.getfullargspec(method)
     methname = method.__name__
     args = []
@@ -128,16 +128,16 @@ def make_method_wrapper(servicename, method, delegateattribute):
 
     # print(src)
 
-    #wrappercode = compile(src,"delegator.py","exec")
+    # wrappercode = compile(src,"delegator.py","exec")
 
     methwrapperspace = {}
     exec(src, globals(), methwrapperspace)
     methwrapper = methwrapperspace[methname]
 
-    #methwrapper.__name__ = methname
-    #methwrapper.__doc__ = doc
+    # methwrapper.__name__ = methname
+    # methwrapper.__doc__ = doc
     # methwrapper.__code__ = wrappercode       # We inject our wrapper code.
-    #methwrapper.__defaults__ = fa.defaults
+    # methwrapper.__defaults__ = fa.defaults
 
     return methwrapper
 
