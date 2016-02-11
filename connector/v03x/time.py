@@ -1,7 +1,7 @@
 import operator
 
 from connector.v03x.controller import EmptyDefinition, ReadableObject, UserObject, LongDecoder, ShortDecoder, \
-    ShortEncoder, ObjectDefinition, InstantiableObject, CommonEqualityMixin, UnsignedShortDecoder, ContainedObject, \
+    ShortEncoder, ObjectDefinition, CommonEqualityMixin, UnsignedShortDecoder, \
     ReadWriteUserObject
 
 __author__ = 'mat'
