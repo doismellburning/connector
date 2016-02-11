@@ -3,8 +3,6 @@ import sys
 import platform
 from validate import Validator
 
-__author__ = 'mat'
-
 from configobj import ConfigObj, Section, SimpleVal, ConfigObjError, flatten_errors
 
 config_extension = '.cfg'
@@ -17,14 +15,14 @@ def config_filename(name):
     return config_file
 
 
-def load_config_file_base(file, must_exist=True):
-    return ConfigObj(file, interpolation='Template') if must_exist or os.path.exists(file) else ConfigObj()
+def load_config_file_base(f, must_exist=True):
+    return ConfigObj(f, interpolation='Template') if must_exist or os.path.exists(f) else ConfigObj()
 
 
 def config_flavor_file(name, subpart=None)->ConfigObj:
     configname = name if not subpart else name + '.' + subpart
-    file = config_filename(configname)
-    config = load_config_file_base(file)
+    f = config_filename(configname)
+    config = load_config_file_base(f)
     return config
 
 
@@ -56,8 +54,8 @@ def load_config(name):
     return config
 
 
-def apply(target, name, file='integration_test'):
-    conf = load_config(file)
+def apply(target, name, f='integration_test'):
+    conf = load_config(f)
     name_parts = name.split('.')
     apply_conf_path(conf, name_parts, target)
 
