@@ -1,5 +1,4 @@
 from abc import abstractmethod
-from operator import add
 from connector import id_service
 from protocol.async import FutureResponse
 from protocol.v03x import ControllerProtocolV030, unsigned_byte, signed_byte
