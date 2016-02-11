@@ -63,7 +63,8 @@ class TimeSeries:
 
     def append_bulk(self, rows: list):
         """
-        Appends multiple rows on one operation. Subclasses are encouraged to override this method to make the insert more efficient.
+        Appends multiple rows on one operation.
+        Subclasses are encouraged to override this method to make the insert more efficient.
         """
         for r in rows:
             self.append(r)
