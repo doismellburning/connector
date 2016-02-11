@@ -1,11 +1,8 @@
-from unittest.mock import Mock, MagicMock
+from unittest.mock import MagicMock
 from hamcrest import assert_that, is_, equal_to, has_length
 from connector.v03x.controller import fetch_dict, ForwardingDecoder, ValueDecoder, ValueEncoder, ForwardingEncoder, \
-    EncoderDecoderDefinition, ControllerLoop, ControllerLoopState, ControllerLoopContainer, SystemProfile, \
+    ControllerLoop, ControllerLoopState, ControllerLoopContainer, SystemProfile, \
     DynamicContainer, BaseController, RootContainer, ValueObject, LongEncoder
-from connector.v03x.objects import PersistentValue
-
-__author__ = 'mat'
 
 import unittest
 
@@ -231,7 +228,6 @@ class BaseControllerAsyncLogTest(unittest.TestCase):
         """ The id chain referenced is to a non-existent object. Since the logs are processed asynchronously on another thread,
             they can be retrieved potentially after the object has been deleted. (Race-condition.)"""
         sut = self.sut
-        v = self.v
         sut.handle_async_log_values(
             (LongEncoder().encode(123456), [1], [([3], b'\x10\x20')]))
 
@@ -239,6 +235,5 @@ class BaseControllerAsyncLogTest(unittest.TestCase):
         """ The id chain referenced is to a non-existent object. Since the logs are processed asynchronously on another thread,
             they can be retrieved potentially after the object has been deleted. (Race-condition.)"""
         sut = self.sut
-        v = self.v
         sut.handle_async_log_values(
             (LongEncoder().encode(123456), [], [([1], b'\x10\x20')]))
