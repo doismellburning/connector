@@ -1,7 +1,7 @@
 import sys
 import serial
 import unittest
-from mockito import mock, verifyNoMoreInteractions, verify, any, when
+from mockito import mock, verifyNoMoreInteractions, verify, any
 from hamcrest import assert_that, equal_to, is_, has_length
 from conduit.test.async_test import AsyncConnectorTest
 
