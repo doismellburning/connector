@@ -1,6 +1,6 @@
 import logging
 import os
-from conduit.base import Conduit, BufferedConduit
+from conduit.base import Conduit
 from conduit.process_conduit import ProcessConduit
 from connector.base import AbstractConnector, ConnectorError
 
