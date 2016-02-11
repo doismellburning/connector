@@ -1,5 +1,3 @@
-__author__ = 'mat'
-
 import datalog.convert as convert
 
 
