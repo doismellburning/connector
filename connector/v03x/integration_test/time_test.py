@@ -1,7 +1,3 @@
-
-__author__ = 'mat'
-
-
 from time import sleep
 
 from hamcrest import greater_than, is_, assert_that, less_than, equal_to
@@ -80,6 +76,6 @@ class SystemTimeTest(BaseControllerTestHelper):
 class ValueProfileTest(BaseControllerTestHelper):
 
     def test_constant_profile(self):
-        p = self.setup_profile()
+        self.setup_profile()
         state = ValueProfileState()
-        valueProfile = self.c.create_object(ValueProfile, state)
+        self.c.create_object(ValueProfile, state)
