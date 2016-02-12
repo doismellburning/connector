@@ -3,7 +3,7 @@ import sys
 import platform
 from validate import Validator
 
-from configobj import ConfigObj, Section, SimpleVal, ConfigObjError, flatten_errors
+from configobj import ConfigObj, Section, ConfigObjError, flatten_errors
 
 config_extension = '.cfg'
 
