@@ -1,7 +1,5 @@
 from support.proxy import Proxy, make_delegation_class
 
-__author__ = 'mat'
-
 import unittest
 
 
